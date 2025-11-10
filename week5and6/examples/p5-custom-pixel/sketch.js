@@ -29,10 +29,14 @@ function draw() {
   translate(width, 0);
   scale(-1, 1);
 
+  // this will flip the video upside down
+  translate(0, height);
+  scale(1,-1)
+
   // https://p5js.org/reference/#/p5.Image/loadPixels
   capture.loadPixels();
 
-  let pixelSize = 40;
+  let pixelSize = 5;
   for (let captureY = 0; captureY < capture.height; captureY += pixelSize) {
     for (let captureX = 0; captureX < capture.width; captureX += pixelSize) {
       // https://p5js.org/reference/#/p5/pixels
@@ -56,7 +60,7 @@ function draw() {
   }
   // filter(GRAY);
   // filter(BLUR, 3);
-  // filter(INVERT);
+  //filter(INVERT);
   // filter(ERODE);
   // filter(DILATE);
   // filter(THRESHOLD, 0.5);
